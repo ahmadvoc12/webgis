@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <!-- Basic -->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site Metas -->
+    <title>Webgis</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/logotani.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/logotani.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+     
+   
+      @media (max-width: 992px) {
+      #map {
+  width: 80%;
+  height: 300px;
+}
+table{
+  font-size: 12px;
+}
+ th, td {
+  padding: 10px;
+}
+  
+      .m-t-250 {
+  margin-top: 112%;
+
+  font-size:10px;
+  
+}
+
+.skiptranslate goog-te-gadget{
+  width:50%;
+}
+      }
+      @media (min-width: 1024px) {
+      #map {
+  width: 60%;
+  height: 500px;
+}
+      }
+      th, td {
+  padding: 15px;
+}
+ .m-t-250 {
+   margin-top: 45%;
+  font-size: 20px;
+  
+}
+    </style>
+  </head>
+
+  <body>
+  
+    <header class="main-header">
+      <!-- Start Navigation -->
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav"
+      >
+        <div class="container">
+          <!-- Start Header Navigation -->
+          <div class="navbar-header">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar-menu"
+              aria-controls="navbars-rs-food"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html"
+              ><img src="images/logotani.png" class="logo" alt=""
+            /></a>
+          </div>
+          <!-- End Header Navigation -->
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul
+              class="nav navbar-nav ml-auto"
+              data-in="fadeInDown"
+              data-out="fadeOutUp"
+            >
+            
+              <li class="nav-item active">
+              <a class="nav-link" href="area1.html">Persebaran titik hotspot</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="area2.html">Persebaran Lahan Gambut</a>
+                </li>
+              
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+
+          <!-- Start Atribute Navigation -->
+
+          <!-- End Atribute Navigation -->
+        </div>
+        <!-- Start Side Menu -->
+
+        <!-- End Side Menu -->
+      </nav>
+      <!-- End Navigation -->
+    </header>
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+      <div class="container">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          <input type="text" class="form-control" placeholder="Search" />
+          <span class="input-group-addon close-search"
+            ><i class="fa fa-times"></i
+          ></span>
+        </div>
+      </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box --> 
+    <br>
+    
+    <center><h2><strong>Peta Areal lahan gambut</strong></h2> <br>
+    <center>
+    <div id='map'></div>
+</center> <br>
+<br>
+<div class="container">
+  
+</div>
+    <!-- End All Title Box -->
+
+    <!-- Start Contact Us  -->
+    
+
+    <!-- End Cart -->
+    <div id="google_translate_element"></div> <br>
+   <footer>
+      <div class="footer-main">
+        <div class="container">
+          <hr />
+          <div class="row">
+           
+            <div class="col-lg-4 col-md-12 col-sm-12" style="display:none;">
+              
+            <div class="col-lg-4 col-md-12 col-sm-12" style="float:right;">
+              
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer  -->
+
+    <!-- Start copyright  -->
+    <div class="footer-copyright">
+      <p class="footer-company">
+        All Rights Reserved. &copy; 2022 <a href="#">Pendidikan Geografi FKIP Untan</a>
+      </p>
+    </div>
+    <!-- End copyright  -->
+
+    <a href="#" id="back-to-top" title="Back to top" style="display: none"
+      >&uarr;</a
+    >
+
+    <!-- ALL JS FILES -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+   
+var greenIcon = L.icon({
+    iconUrl: 'images/api.png',
+   
+
+    iconSize:     [30, 40], // size of the icon
+    
+    
+
+   
+});
+
+var map = L.map('map').setView([-0.03109, 109.32199], 10);
+mapLink =
+  '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+L.tileLayer(
+  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; ' + mapLink + ' Contributors',
+    maxZoom: 18,
+  }).addTo(map);
+
+for (var i = 0; i < locations.length; i++) {
+  marker = new L.marker([locations[i][1], locations[i][2]],{icon:greenIcon})
+    .bindPopup(locations[i][0])
+    .addTo(map);
+}
+
+var polygonPoints = [
+        [-0.098249, 109.338665],
+        [-0.132581, 109.351024],
+        [-0.158274, 109.349801],
+        [-0.177849, 109.344907],
+        [-0.226602, 109.325677],
+     
+        [-0.284290, 109.458077],
+        [-0.298971, 109.463277],
+
+        [-0.305667, 109.448926],
+        [-0.315438, 109.429972],
+      
+        [-0.357979, 109.456815],
+       
+        [-0.398866, 109.502677],
+        [-0.392443, 109.509864],
+        [-0.370956, 109.499618],
+        [-0.369962, 109.502600],
+
+        [-0.382579, 109.520723],
+        [-0.338612, 109.541904],
+        [-0.339988, 109.546110],
+        [-0.374550, 109.551921],
+        [-0.379500, 109.456433],
+        [-0.372944, 109.567214],
+      
+      
+        [-0.330659, 109.598030],
+
+        [-0.367592, 109.602924],
+        [-0.368509, 109.640546],
+        [-0.351381, 109.658286],
+        [-0.339759, 109.686425],
+        [-0.309172, 109.691319],
+        [-0.307949, 109.707224],
+        [-0.345876, 109.703554],
+        [-0.279810, 109.773291],
+        [-0.330659, 109.598030],
+
+        [-0.249223, 109.772680],
+        [-0.244941, 109.795925],
+        [-0.270634, 109.787973],
+        [-0.266963, 109.803878],
+        [-0.241271, 109.807548],
+        [-0.282868, 109.829571],
+        [-0.269869, 109.841958],
+        [-0.281324, 109.870291],
+        [-0.258955, 109.948494],
+
+        [-0.226219, 109.941219],
+        [-0.146197, 109.938309],
+        [-0.149107, 109.917940],
+        [-0.125828, 109.900481],
+        [-0.105458, 109.762260],
+        [-0.163656, 109.692423],
+        [-0.200030, 109.589121],
+        [-0.157836, 109.536743],
+        [-0.114188, 109.476362],
+
+        [-0.087999, 109.459631],
+        [-0.081452, 109.433441],
+        [-0.087999, 109.418892],
+        [-0.066902, 109.403615],
+        [-0.052353, 109.388338],
+        [-0.060355, 109.371606],
+        [-0.200030, 109.589121],
+        [-0.058900, 109.367605],
+        [-0.097638, 109.343234],
+
+        [-0.095637, 109.339597]
+        ];
+        var polygonPoints = {
+   color: 'red',
+   fillColor: '#f03',
+   fillOpacity: 0
+}
+        var poly = L.polygon(polygonPoints).addTo(map);
+    </script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/inewsticker.js"></script>
+    <script src="js/bootsnav.js."></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL}, 'google_translate_element');
+}
+
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>
