@@ -112,10 +112,10 @@ table{
               data-out="fadeOutUp"
             >
             
-              <li class="nav-item active">
+              <li class="nav-item ">
               <a class="nav-link" href="area1.html">Persebaran titik hotspot</a>
               </li>
-               <li class="nav-item ">
+              <li class="nav-item active">
               <a class="nav-link" href="area2.html">Persebaran titik karhutla</a>
               </li>
               
@@ -152,33 +152,13 @@ table{
     <!-- Start All Title Box --> 
     <br>
     
-    <center><h2><strong>Peta Persebaran Hotspot & area lahan gambut</strong></h2> <br>
+    <center><h2><strong>Peta Persebaran Daerah Rawan Karhutla</strong></h2> <br>
     <center>
     <div id='map'></div>
 </center> <br>
 <br>
 <div class="container">
-  <center><h2><strong>Area Persebaran</strong></h2> <br>
-  <table>
-  <tr>
-    <th>1. Sungai Ambawang (4 titik hotspot)</th>
-    <th>5. Sungai bulan (14 titik hostpot)</th>
-    
-  </tr>
-  <tr>
-    <th>2. Rasau jaya (5 titik hostpot)</th>
-    <th>6. Kalimantan Barat</th>
- 
-  </tr>
-  <tr>
-    <th>3. Kuala 2 (3 titik hostpot)</th>
- 
-  </tr>
-  <tr>
-    <th>4. Limbung (5 titik hostpot)</th>
-   
-  </tr>
-</table>
+  
 </center>
 </div>
     <!-- End All Title Box -->
@@ -220,51 +200,26 @@ table{
     <script src="js/jquery-3.2.1.min.js"></script>
     <script>
       var locations = [
-  ['titik hostpot', -0.201155424, 109.343429599999],
-  ['titik hostpot', -0,2712937, 109.4932404],
-  ['titik hostpot', 	-0.282046109, 109.4917068],
-  ['titik hostpot', -0.323118061, 109.4725571],
-  ['titik hostpot', -0.282046109, 109.4917068],
-  ['titik hostpot', -0.323118061, 109.4725571],
-  ['titik hostpot', 	-0.325071067, 109.4856644],
-  ['titik hostpot', 	-0.324311435, 109.483017],
-  ['titik hostpot', 	-0.325695544, 109.473403899999],
-  ['titik hostpot', 	-0.279382139, 109.4904175],
-  ['titik hostpot', 	-0.149969, 	109.355999999999],
-  ['titik hostpot', 	-0.183439314, 	109.351264999999],
-  ['titik hostpot', 	-0.12653, 	109.352999999999],
-  ['titik hostpot', 		-0.325480312, 		109.474388099999],
-  ['titik hostpot', 	-0.326840222, 	109.4648209],
-  ['titik hostpot', 		-0.316215754, 	109.4730301],
-  ['titik hostpot', 		-0.317578465, 	109.4634781],
-  ['titik hostpot', 		-0.322908759, 	109.4709778],
-  ['titik hostpot', -0,324230224, 		109.4799194],
-  ['titik hostpot', 		-0.32122174, 		109.4732056],
-  ['titik hostpot', 	-0,210568, 		109.581999999999],
-  ['titik hostpot', 		-0.32325429, 		109.4752045],
-  ['titik hostpot', 		-0.31747895, 		109.4696426],
-  ['titik hostpot', 		-0.321441, 		109.472999999999],
-  ['titik hostpot', 		-0.327168, 		109.463999999999],
-  ['titik hostpot', 		-0.328331, 		109.471999999999],
-  ['titik hostpot', 	-0.27447388, 		109.601310699999],
-  ['titik hostpot', 		-0.28325298, 		109.4872284],
-  ['titik hostpot', 		-0.09514648, 		109.464897199999],
-  ['titik hostpot', 		-0.09050599, 		109.448822],
-  ['titik hostpot', 		-0.098302275, 		109.4597092],
-  ['titik hostpot', 		-0.23559, 		109.495],
-  ['titik hostpot', 		-0.088944979, 		109.450469999999],
-  ['titik hostpot', 		-0.223382905, 		109.432441699999],
-  ['titik hostpot', 		-0.224751204, 		109.422866799999],
-  ['titik hostpot', 		-0.246696129, 		109.421783399999],
-  ['titik hostpot', 	-0,185464606, 		109,4071579],
-  ['titik hostpot', 		-0,235381976, 		109,424880999999],
-  ['titik hostpot', 	-0,241693, 		109,42],
-  ['titik hostpot', 		-0,08116661, 		109,384544399999],
-  ['titik hostpot', 		-0,2419661, 	109,416564899999],
-  ['titik hostpot', 	-0,243253276, 	109,414039599999],
-  ['titik hostpot', 		-0,202840298, 	109,565414399999],
-  ['titik hostpot', 		-0,23643081, 		109,442787199999],
- 
+  ['Arang limbung (tingkat kerawanan : Sedang)', 	-0.10879025641, 109.406187821],
+  ['Gunung Tamang (tingkat kerawanan : Sedang)', -0.176995522, 109.8930585],
+  ['Kali Bandung (tingkat kerawanan : Sedang', 	 -0.335455441, 109.603485],
+  ['Desa Kapur (tingkat kerawanan :Tinggi)',  -0.064517629, 109.3820258],
+  ['Kuala Dua (tingkat kerawanan :Tinggi)', 	-0.1685711, 109.4313771],
+  ['Madu Sari (tingkat kerawanan :Tinggi)', -0.110200097, 109.4346119],
+  ['Mekar Baru (tingkat kerawanan :Tinggi)', 	-0.086071, 109.407877],
+  ['Mekar Sari (tingkat kerawanan :Tinggi)', 	 -0.215375251, 109.4686423],
+  ['Muara Baru (tingkat kerawanan :Rendah)', 	-0.270361082, 109.7663367],
+  ['Sungai Bulan (tingkat kerawanan :Tinggi)', 	-0.338453078, 109.451333],
+  ['Parit Baru (tingkat kerawanan :Sedang)', 	-0.084513029, 	109.3777042],
+  ['Pulau Jambu (tingkat kerawanan :Sedang)', 	-0.24554801, 	109.9526617],
+  ['Pulau Limbung (tingkat kerawanan :Sedang)', 	-0.268841479, 	109.8586208],
+  ['Sungai Ambangah (tingkat kerawanan :Sedang)', 		 -0.125628593, 		109.42764],
+  ['Sungai Asam (tingkat kerawanan :Rendah)', 	-0.25841426, 	109.5306613],
+  ['Sungai Raya (tingkat kerawanan :Rendah)', 	-0.085251435, 	109.1612203],
+  ['Sungai Raya Dalam (tingkat kerawanan :Tinggi)', 		-0.082251435 , 	109.3612203],
+  ['Tebang Kacang (tingkat kerawanan :Sedang)', 		-0.189509092, 	109.4669738],
+  ['Teluk Kapuas (tingkat kerawanan :Sedang)', -0.097473527, 	109.3969905],
+  ['Limbung (tingkat kerawanan :Tinggi)', 		-0.137773124, 	109.4066452],
   
   
 ];
@@ -294,79 +249,7 @@ for (var i = 0; i < locations.length; i++) {
     .addTo(map);
 }
 
-var polygonPoints = [
-        [-0.098249, 109.338665],
-        [-0.132581, 109.351024],
-        [-0.158274, 109.349801],
-        [-0.177849, 109.344907],
-        [-0.226602, 109.325677],
-     
-        [-0.284290, 109.458077],
-        [-0.298971, 109.463277],
 
-        [-0.305667, 109.448926],
-        [-0.315438, 109.429972],
-      
-        [-0.357979, 109.456815],
-        [-0.379500, 109.456433],
-        [-0.398866, 109.502677],
-        [-0.392443, 109.509864],
-        [-0.370956, 109.499618],
-        [-0.369962, 109.502600],
-
-        [-0.382579, 109.520723],
-        [-0.338612, 109.541904],
-        [-0.339988, 109.546110],
-        [-0.374550, 109.551921],
-        [-0.379500, 109.456433],
-        [-0.372944, 109.567214],
-      
-      
-        [-0.330659, 109.598030],
-
-        [-0.367592, 109.602924],
-        [-0.368509, 109.640546],
-        [-0.351381, 109.658286],
-        [-0.339759, 109.686425],
-        [-0.309172, 109.691319],
-        [-0.307949, 109.707224],
-        [-0.345876, 109.703554],
-        [-0.279810, 109.773291],
-        [-0.330659, 109.598030],
-
-        [-0.249223, 109.772680],
-        [-0.244941, 109.795925],
-        [-0.270634, 109.787973],
-        [-0.266963, 109.803878],
-        [-0.241271, 109.807548],
-        [-0.282868, 109.829571],
-        [-0.269869, 109.841958],
-        [-0.281324, 109.870291],
-        [-0.258955, 109.948494],
-
-        [-0.226219, 109.941219],
-        [-0.146197, 109.938309],
-        [-0.149107, 109.917940],
-        [-0.125828, 109.900481],
-        [-0.105458, 109.762260],
-        [-0.163656, 109.692423],
-        [-0.200030, 109.589121],
-        [-0.157836, 109.536743],
-        [-0.114188, 109.476362],
-
-        [-0.087999, 109.459631],
-        [-0.081452, 109.433441],
-        [-0.087999, 109.418892],
-        [-0.066902, 109.403615],
-        [-0.052353, 109.388338],
-        [-0.060355, 109.371606],
-        [-0.200030, 109.589121],
-        [-0.058900, 109.367605],
-        [-0.097638, 109.343234],
-
-        [-0.095637, 109.339597]
-        ];
-        var poly = L.polygon(polygonPoints).addTo(map);
     </script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
